@@ -3,6 +3,7 @@ package dev.jairo.academy.service;
 import dev.jairo.academy.domain.Aluno;
 import dev.jairo.academy.dto.AlunoRequest;
 import dev.jairo.academy.dto.AlunoResponse;
+import dev.jairo.academy.exception.RegraNegocioException;
 import dev.jairo.academy.repository.AlunoRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -19,7 +20,7 @@ public class AlunoService {
 
     public AlunoResponse cadastrar(AlunoRequest request) {
         if(request.email() != null && alunoRepository.existsByEmail(request.email())) {
-            throw new RuntimeException("Já existe um Aluno cadastrado com este email");
+            throw new RegraNegocioException("Já existe um Aluno cadastrado com este email");
         }
 
         Aluno aluno = request.toEntity();
@@ -49,7 +50,7 @@ public class AlunoService {
     }
 
     private Aluno buscarEntidadePorId(Long id) {
-        return alunoRepository.findById(id).orElseThrow(() -> new RuntimeException("Aluno não encontrado."));
+        return alunoRepository.findById(id).orElseThrow(() -> new RegraNegocioException("Aluno não encontrado."));
     }
 
 

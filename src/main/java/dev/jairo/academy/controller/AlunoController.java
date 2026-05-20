@@ -3,6 +3,7 @@ package dev.jairo.academy.controller;
 import dev.jairo.academy.dto.AlunoRequest;
 import dev.jairo.academy.dto.AlunoResponse;
 import dev.jairo.academy.service.AlunoService;
+import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -20,7 +21,7 @@ public class AlunoController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public AlunoResponse cadastrar(@RequestBody AlunoRequest alunoRequest) {
+    public AlunoResponse cadastrar(@RequestBody @Valid AlunoRequest alunoRequest) {
         return alunoService.cadastrar(alunoRequest);
     }
 
@@ -35,7 +36,7 @@ public class AlunoController {
     }
 
     @PutMapping("/{id}")
-    public AlunoResponse atualizar(@PathVariable Long id, @RequestBody AlunoRequest alunoRequest) {
+    public AlunoResponse atualizar(@PathVariable Long id, @RequestBody @Valid AlunoRequest alunoRequest) {
         return alunoService.atualizar(id, alunoRequest);
     }
 

@@ -74,3 +74,24 @@ Content-Type: application/json
   "estado": "SP",
   "cep": "03155-099"
 }
+
+### Cadastrar aluno INVÁLIDO
+POST {{baseUrl}}/alunos
+Content-Type: application/json
+
+{
+  "nome": "",
+  "dataNascimento": "1997-09-21",
+  "sexo": "Female",
+  "telefone": "1112345644",
+  "celular": "119911189898",
+  "email": "joao com email.com invalid",
+  "observacao": "Aluno iniciante",
+  "endereco": "Rua das Flores",
+  "numero": "123",
+  "complemento": "Apartamento 169",
+  "bairro": "Centro",
+  "cidade": "Sao Paulo",
+  "estado": "Saint Paul",
+  "cep": "03155-099"
+}
