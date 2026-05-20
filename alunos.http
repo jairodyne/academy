@@ -1,0 +1,76 @@
+@baseUrl = http://localhost:8080
+
+### Cadastrar aluno
+POST {{baseUrl}}/alunos
+Content-Type: application/json
+
+{
+  "nome": "João da Silva",
+  "dataNascimento": "1995-08-05",
+  "sexo": "M",
+  "telefone": "1112345644",
+  "celular": "119911189898",
+  "email": "joao@email.com",
+  "observacao": "Aluno iniciante",
+  "endereco": "Rua das Flores",
+  "numero": "123",
+  "complemento": "Apartamento 169",
+  "bairro": "Centro",
+  "cidade": "Sao Paulo",
+  "estado": "SP",
+  "cep": "03155-099"
+}
+
+### Listar Alunos
+GET {{baseUrl}}/alunos
+
+### Listar Alunos com pagination
+GET {{baseUrl}}/alunos?page=0&size=10&sort=nome,asc
+
+### Buscar Aluno por ID
+GET {{baseUrl}}/alunos/12
+
+### Atualizar Aluno
+PUT {{baseUrl}}/alunos/1
+Content-Type: application/json
+
+{
+  "nome": "João da Silva ATUALIZADO",
+  "dataNascimento": "1995-08-05",
+  "sexo": "M",
+  "telefone": "1112345644",
+  "celular": "119911189898",
+  "email": "joao@email.com",
+  "observacao": "Aluno iniciante",
+  "endereco": "Rua das Flores",
+  "numero": "123",
+  "complemento": "Apartamento 169",
+  "bairro": "Centro",
+  "cidade": "Sao Paulo",
+  "estado": "SP",
+  "cep": "03155-099"
+}
+
+### Excluir Aluno
+DELETE {{baseUrl}}/alunos/1
+
+### Cadastrar aluno
+POST {{baseUrl}}/alunos
+Content-Type: application/json
+
+{
+  "nome": "Maria Oliveira",
+  "dataNascimento": "1997-09-21",
+  "sexo": "F",
+  "telefone": "1112345644",
+  "celular": "119911189898",
+  "email": "joao@email.com",
+  "observacao": "Aluno iniciante",
+  "endereco": "Rua das Flores",
+  "numero": "123",
+  "complemento": "Apartamento 169",
+  "bairro": "Centro",
+  "cidade": "Sao Paulo",
+  "estado": "SP",
+  "cep": "03155-099"
+}
