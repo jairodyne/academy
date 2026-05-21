@@ -109,3 +109,16 @@ GET {{baseUrl}}/alunos?cidade=Sao Paulo&page=0&size=10&sort=nome,asc
 GET {{baseUrl}}/alunos?estado=SP&page=0&size=10&sort=nome,asc
 
 
+### Faturamento Mensal Report
+GET {{baseUrl}}/relatorios/faturamento-mensal
+
+### Alunos por Cidade Report
+GET {{baseUrl}}/relatorios/alunos-por-cidade
+
+### Faturas em Aberto Report
+GET {{baseUrl}}/relatorios/faturas-em-aberto
+
+
+
+
+
