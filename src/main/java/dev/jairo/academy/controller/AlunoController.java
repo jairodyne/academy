@@ -1,5 +1,6 @@
 package dev.jairo.academy.controller;
 
+import dev.jairo.academy.dto.AlunoFiltroRequest;
 import dev.jairo.academy.dto.AlunoRequest;
 import dev.jairo.academy.dto.AlunoResponse;
 import dev.jairo.academy.service.AlunoService;
@@ -26,8 +27,8 @@ public class AlunoController {
     }
 
     @GetMapping
-    public Page<AlunoResponse> listar(Pageable pageable) {
-        return alunoService.listar(pageable);
+    public Page<AlunoResponse> listar(AlunoFiltroRequest filtro, Pageable pageable) {
+        return alunoService.listar(filtro, pageable);
     }
 
     @GetMapping("/{id}")
