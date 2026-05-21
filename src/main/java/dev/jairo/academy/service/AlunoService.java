@@ -1,10 +1,12 @@
 package dev.jairo.academy.service;
 
 import dev.jairo.academy.domain.Aluno;
+import dev.jairo.academy.dto.AlunoFiltroRequest;
 import dev.jairo.academy.dto.AlunoRequest;
 import dev.jairo.academy.dto.AlunoResponse;
 import dev.jairo.academy.exception.RegraNegocioException;
 import dev.jairo.academy.repository.AlunoRepository;
+import dev.jairo.academy.specification.AlunoSpecification;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -28,8 +30,8 @@ public class AlunoService {
         return AlunoResponse.fromEntity(alunoSalvo);
     }
 
-    public Page<AlunoResponse> listar(Pageable pageable) {
-        return alunoRepository.findAll(pageable).map(AlunoResponse::fromEntity);
+    public Page<AlunoResponse> listar(AlunoFiltroRequest filtro, Pageable pageable) {
+        return alunoRepository.findAll(AlunoSpecification.comFiltros(filtro), pageable).map(AlunoResponse::fromEntity);
     }
 
     public AlunoResponse buscarPorId(Long id) {
