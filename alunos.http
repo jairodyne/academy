@@ -10,7 +10,7 @@ Content-Type: application/json
   "sexo": "M",
   "telefone": "1112345644",
   "celular": "119911189898",
-  "email": "joao@email.com",
+  "email": "joao.fuzilli@email.com",
   "observacao": "Aluno iniciante",
   "endereco": "Rua das Flores",
   "numero": "123",
@@ -100,7 +100,7 @@ Content-Type: application/json
 GET {{baseUrl}}/alunos?page=0&size=10&sort=nome,asc
 
 ### Listar por nome
-GET {{baseUrl}}/alunos?nome=joao&page=0&size=10&sort=nome,asc
+GET {{baseUrl}}/alunos?nome=maria&page=0&size=10&sort=nome,asc
 
 ### Listar por cidade
 GET {{baseUrl}}/alunos?cidade=Sao Paulo&page=0&size=10&sort=nome,asc
