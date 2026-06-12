@@ -75,6 +75,27 @@ Content-Type: application/json
   "cep": "03155-099"
 }
 
+### Cadastrar aluno
+POST {{baseUrl}}/alunos
+Content-Type: application/json
+
+{
+  "nome": "Carlos Henrique Souza",
+  "dataNascimento": "1992-03-14",
+  "sexo": "M",
+  "telefone": "1133445566",
+  "celular": "11987654321",
+  "email": "carlos.souza@email.com",
+  "observacao": "Aluno intermediario",
+  "endereco": "Avenida Paulista",
+  "numero": "1000",
+  "complemento": "Sala 45",
+  "bairro": "Bela Vista",
+  "cidade": "Sao Paulo",
+  "estado": "SP",
+  "cep": "01310-100"
+}
+
 ### Cadastrar aluno INVÁLIDO
 POST {{baseUrl}}/alunos
 Content-Type: application/json
@@ -117,7 +138,6 @@ GET {{baseUrl}}/relatorios/alunos-por-cidade
 
 ### Faturas em Aberto Report
 GET {{baseUrl}}/relatorios/faturas-em-aberto
-
 
 
 

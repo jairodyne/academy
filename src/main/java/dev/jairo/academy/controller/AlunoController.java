@@ -1,5 +1,6 @@
 package dev.jairo.academy.controller;
 
+import dev.jairo.academy.doc.AlunoControllerDoc;
 import dev.jairo.academy.dto.AlunoFiltroRequest;
 import dev.jairo.academy.dto.AlunoRequest;
 import dev.jairo.academy.dto.AlunoResponse;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/alunos")
-public class AlunoController {
+public class AlunoController implements AlunoControllerDoc {
 
     private final AlunoService alunoService;
 
